@@ -1,0 +1,43 @@
+/* cinema/cinema.wxss */
+page{
+  margin: 0;
+  padding: 0;
+}
+.top{
+  position: fixed;
+  top:0;
+  z-index: 10;
+  width: 100%;
+  background-color: #EDEDED;
+}
+.top>view{
+  padding: 30rpx 30rpx;
+  font-size: 30rpx;
+}
+.top>view>image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: -2rpx;
+  vertical-align: middle;
+}
+.top input{
+  border-radius: 10rpx;
+  position: absolute;
+  top: -3rpx;
+  left: 140rpx;
+  background-color: #fff;
+  width: 500rpx;
+  font-size:30rpx;
+  text-align: center;
+  margin-top: 30rpx;
+  padding-left: 20rpx;
+  color: #BCBCBC;
+}
+.top>image{
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  top: 38rpx;
+  left: 320rpx;
+  z-index: 10;
+}

@@ -1,0 +1,69 @@
+<!--performance/performance.wxml-->
+<view class='top'>
+  <view>
+      <text bindtap='click'>大连</text>
+      <image src='../image/向左实心箭头.png'></image>
+  </view>
+  <image src='../image/搜索.png'></image>
+  <input value="找艺人、演出、场馆"></input>
+</view>
+<banner class="banner" imgUrls="{{imgUrls}}"></banner>
+<classify></classify>
+<view class='find'>
+  <view>- 发现精彩 -</view>
+  <view>
+    <view>
+      <image src='../image/rAoKmVnbKrGAd3WvAAEt1InQ-hQ372.jpg'></image>
+      <view>
+        <text>聆听最邓丽君的声音</text>
+      </view>
+      <text>陈佳演唱会大连站</text>
+    </view>
+    <view>
+      <image src='../image/5ac1f2ccba26f.jpg'></image>
+      <view>
+        <text>明星来了!</text>
+      </view>
+      <text>搜罗本地最热演唱会</text>
+    </view>
+  </view>
+</view>
+<view class='popular'>
+  <view>
+    <text>- 热门场馆 -</text>
+    <text>更多 ></text>
+  </view>
+  <view>
+    <view>
+      <view>人民文化俱乐部</view>
+      <view>
+        <text class='font'>更多15场演出</text>
+        <text class='jian'>></text>
+      </view>
+      <view class='left'>
+        <image src='../image/2017080810370719.jpg'></image>
+        <view class='zi ft'>开心麻花喜剧新体验</view>
+      </view>
+      <view class='right'>
+        <image src='../image/U5199P28T3D3469845F326DT20111104113645.jpg'></image>
+        <view class='zi'>【大连】《芭蕾舞剧天鹅湖》</view>
+      </view>
+    </view>
+    <view>
+      <view>金三角剧场</view>
+      <view class='right two'>
+        <text class='font'>2场在线演出</text>
+        <text class='jian'>></text>
+      </view>
+      <view>
+        <image src='../image/159002_n.jpg'></image>
+        <view class='zi ft'>话剧《最后的卡伦》</view>
+      </view>
+      <view class='right'>
+        <image src='../image/1533699771554_k0o2-0.jpg'></image>
+        <view class='zi'>话剧《徐娘的梦》</view>
+      </view>
+    </view>
+  </view>
+</view>
+<dropdown json="{{json.data}}" screen="{{screen}}"></dropdown>

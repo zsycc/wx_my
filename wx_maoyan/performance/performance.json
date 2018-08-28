@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "city-list": "../../components/cityList/cityList",
+    "banner": "../../components/banner/banner",
+    "classify":"../../components/classify/classify",
+    "dropdown": "../../components/dropdown/dropdown"
+  }
+}

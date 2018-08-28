@@ -1,0 +1,44 @@
+<!--components/classify/classify.wxml-->
+<slot></slot>
+<view class='img'>
+  <view>
+    <image src='../../image/sing.png'></image>
+    <view>演唱会</view>
+  </view>
+  <view>
+    <image src='../../image/drama.png'></image>
+    <view>话剧歌剧</view>
+  </view>
+  <view>
+    <image src='../../image/leisure.png'></image>
+    <view>休闲展览</view>
+  </view>
+  <view>
+    <image src='../../image/child.png'></image>
+    <view>亲子演出</view>
+  </view>
+  <view>
+    <image src='../../image/opera.png'></image>
+    <view>戏曲艺术</view>
+  </view>
+  <view>
+    <image src='../../image/music.png'></image>
+    <view>音乐会</view>
+  </view>
+  <view>
+    <image src='../../image/dance.png'></image>
+    <view>舞蹈芭蕾</view>
+  </view>
+  <view>
+    <image src='../../image/sports.png'></image>
+    <view>运动/健身</view>
+  </view>
+  <view>
+    <image src='../../image/price.png'></image>
+    <view>景点/门票</view>
+  </view>
+  <view>
+    <image src='../../image/more.png'></image>
+    <view>更多精彩</view>
+  </view>
+</view>

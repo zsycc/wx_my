@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "styles": "../../conponents_cin/location/location"
+  }
+}

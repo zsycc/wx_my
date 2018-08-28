@@ -1,0 +1,37 @@
+<!--conponents_cin/dropdown/dropdown.wxml-->
+<!--conponents_cin/cityList/cityList.wxml-->
+<slot></slot>
+<view class='top'>
+  <view>
+    <text>全城</text>
+    <image src='../../img/向左实心箭头.png'></image>
+  </view>
+  <view>
+    <text>品牌</text>
+    <image src='../../img/向左实心箭头.png'></image>
+  </view>
+  <view>
+    <text>特色</text>
+    <image src='../../img/向左实心箭头.png'></image>
+  </view>
+</view>
+<view class='wrap' wx:for="{{obj}}">
+  <view class='left'>
+    <view>
+      <text>{{item.nm}}</text>
+      <text>{{item.sellPrice}}</text>
+      <text>元起</text>
+    </view>
+    <view>{{item.addr}}</view>
+    <view>
+    <text>{{item.tag.vipTag}}</text>
+    <text wx:for="{{item.tag.hallTypeVOList}}">{{item.name}}</text>
+    </view>
+    <view>
+      <text>{{item.promotion.cardPromotionTag}}</text>
+    </view>
+  </view>
+  <view class='right'>
+    {{item.distance}}
+  </view>
+</view>

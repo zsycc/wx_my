@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "city-list": "../../conponents_cin/cityList/cityList",
+    "banner": "../../conponents_cin/banner/banner",
+    "dropdown": "../../conponents_cin/dropdown/dropdown"
+  }
+}
