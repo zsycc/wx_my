@@ -1,0 +1,73 @@
+/* city/city.wxss */
+.posi{
+  width: 500rpx;
+  background-color: #fff;
+  border: 1px solid #d2d2d2;
+  padding: 20rpx 20rpx;
+  margin-left: 60rpx;
+}
+.one{
+  width: 550rpx;
+  border:1px solid #f1f1f1;
+  box-sizing: border-box;
+  height: 550rpx;
+  overflow-y: auto;
+  border-top: 0;
+  background: #fff;
+  transition: height 0.3s;
+  margin-left: 60rpx;
+}
+.one>text{
+  display: block;
+  line-height: 40rpx;
+  border-bottom: 1px solid #efefef;
+  padding: 10rpx;
+}
+.posi_one{
+  width: 500rpx;
+  background-color: #fff;
+  border: 1px solid #d2d2d2;
+  padding: 20rpx 20rpx;
+  margin-left: 60rpx;
+}
+.two{
+  width: 550rpx;
+  border:1px solid #f1f1f1;
+  box-sizing: border-box;
+  height: 550rpx;
+  overflow-y: auto;
+  border-top: 0;
+  background: #fff;
+  transition: height 0.3s;
+  margin-left: 60rpx;
+}
+.two>text{
+  display: block;
+  line-height: 40rpx;
+  border-bottom: 1px solid #efefef;
+  padding: 10rpx;
+}
+.posi_two{
+  width: 500rpx;
+  background-color: #fff;
+  border: 1px solid #d2d2d2;
+  padding: 20rpx 20rpx;
+  margin-left: 60rpx;
+}
+.three{
+  width: 550rpx;
+  border:1px solid #f1f1f1;
+  box-sizing: border-box;
+  height: 550rpx;
+  overflow-y: auto;
+  border-top: 0;
+  background: #fff;
+  transition: height 0.3s;
+  margin-left: 60rpx;
+}
+.three>text{
+  display: block;
+  line-height: 40rpx;
+  border-bottom: 1px solid #efefef;
+  padding: 10rpx;
+}

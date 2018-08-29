@@ -1,0 +1,14 @@
+<!--city/city.wxml-->
+<slot></slot>
+<view bindtap='click' class='posi'>{{json[index].name}}</view>
+<view class='one' style='display:{{display}}'>
+  <text wx:for='{{json}}' wx:key='this' data-index='{{index}}' bindtap='posi_click'>{{item.name}}</text>
+</view>
+<view bindtap='click_one' class='posi_one'>{{json.city[index].name}}</view>
+<view class='two' style='display:{{display1}}'>
+  <text wx:for='{{json}}' wx:key='{{index}}'>{{item.city[index].name}}</text>
+</view>
+<view bindtap='click_two' class='posi_two'>{{json.city[index].area}}</view>
+<view class='three' style='display:{{display2}}'>
+  <text wx:for='{{json}}' wx:key='{{index}}'>{{item.city[index].area}}</text>
+</view>

@@ -1,0 +1,4 @@
+<!--show/show.wxml-->
+<city-list bind:closeCity="closeCity" class="Transition {{moveTop ?'scrollTop' : ''}}" city="{{city}}">
+
+</city-list>
