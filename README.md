@@ -173,3 +173,26 @@ var instance = axios.create({
 axios.interceptors.request.eject(myInterceptor);
 (3)为自定义 axios 实例添加拦截器:var instance = axios.create();
 instance.interceptors.request.use(function () {/*...*/});
+
+变量的解构赋值
+定义:ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为解构
+1.数组的解构
+写法:let [a, b, c] = [1, 2, 3];
+     let [foo, [[bar], baz]] = [1, [[2], 3]];
+     如果前面两个值 不想要的话
+     let [ , , third] = ["foo", "bar", "baz"];
+     ... => 扩展运算符:扩展运算符（spread）是三个点（...）。它好比 rest 参数的逆运算，将一个数组转为用逗号分隔的参数序列。主要用于函数调用。
+     let [head, ...tail] = [1, 2, 3, 4];
+     //数组的拷贝
+     let Arr = [1,2,3,4,5]
+     //数组的扩展运算符 适用于简单一维深拷贝
+     let [...arr] = Arr;
+     //默认值
+     let [foo = true] = [];
+     let [x = 1] = [undefined];
+     // x // 1
+     let [x = 1] = [null];
+     // x // null
+2.对象的解构
+写法:let { fo, bar } = { foo: "11", bar: "bbb" };
+注意:对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。
