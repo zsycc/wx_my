@@ -195,4 +195,131 @@ instance.interceptors.request.use(function () {/*...*/});
      // x // null
 2.对象的解构
 写法:let { fo, bar } = { foo: "11", bar: "bbb" };
+     let brr = ['wyq','ldx','yt','err'];
+     let Brr = [...brr,'瘦','肥','严']
 注意:对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。
+与数组一样，解构也可以用于嵌套结构的对象
+写法: let obj = {
+     p: [
+     'Hello',
+       { y: 'World' }
+     ]
+   };
+   let { p: [x, { y }] } = obj;
+3.字符串的解构赋值:字符串被转换成了一个类似数组的对象。
+写法:const [a, b, c, d, e] = 'hello';
+    a // "h"
+    b // "e"
+    c // "l"
+    d // "l"
+    e // "o"
+类似数组的对象都有一个length属性，因此还可以对这个属性解构赋值。
+写法:let {length : len} = 'hello';
+    len // 5
+4.数值和布尔值的解构赋值:解构赋值时，如果等号右边是数值和布尔值，则会先转为对象。
+写法:let {toString: s} = 123;
+    s === Number.prototype.toString // true
+
+    let {toString: s} = true;
+    s === Boolean.prototype.toString // true
+解构赋值的规则是，只要等号右边的值不是对象或数组，就先将其转为对象。由于undefined和null无法转为对象，所以对它们进行解构赋值，都会报错
+let { prop: x } = undefined; // TypeError
+let { prop: y } = null; // TypeError
+5.函数参数的解构赋值
+(1)function add([x, y]){
+  return x + y;
+}
+add([1, 2]); // 3
+(2)map:[[1, 2], [3, 4]].map(([a, b]) => a + b);
+   // [ 3, 7 ]
+(3)函数参数的解构也可以使用默认值。
+function move({x = 0, y = 0} = {}) {
+  return [x, y];
+}
+move({x: 3, y: 8}); // [3, 8]
+move({x: 3}); // [3, 0]
+move({}); // [0, 0]
+move(); // [0, 0]
+函数move的参数是一个对象，通过对这个对象进行解构，得到变量x和y的值。如果解构失败，x和y等于默认值。
+(4)function move({x, y} = { x: 0, y: 0 }) {
+  return [x, y];
+}
+
+move({x: 3, y: 8}); // [3, 8]
+move({x: 3}); // [3, undefined]
+move({}); // [undefined, undefined]
+move(); // [0, 0]
+函数move的参数指定默认值，而不是为变量x和y指定默认值，所以会得到与前一种写法不同的结果。
+(5)undefined就会触发函数参数的默认值:[1, undefined, 3].map((x = 'yes') => x);
+ 				 // [ 1, 'yes', 3 ]
+6.圆括号问题:ES6 的规则是，只要有可能导致解构的歧义，就不得使用圆括号。但是，这条规则实际上不那么容易辨别，处理起来相当麻烦。因此，建议只要有可能，就不要在模式中放置圆括号。
+以下三种解构赋值不得使用圆括号。
+(1)变量声明语句:// 全部报错
+let [(a)] = [1];
+let {x: (c)} = {};
+let ({x: c}) = {};
+let {(x: c)} = {};
+let {(x): c} = {};
+let { o: ({ p: p }) } = { o: { p: 2 } };
+(2)函数参数:函数参数也属于变量声明，因此不能带有圆括号。
+// 报错
+function f([(z)]) { return z; }
+// 报错
+function f([z,(x)]) { return x; }
+(3)赋值语句的模式
+// 全部报错
+({ p: a }) = { p: 42 };
+([a]) = [5];
+可以使用圆括号的情况:赋值语句的非模式部分，可以使用圆括号
+7.用途
+（1）交换变量的值:let x = 1;
+		let y = 2;
+		[x, y] = [y, x];
+(2)从函数返回多个值
+// 返回一个数组
+
+function example() {
+  return [1, 2, 3];
+}
+let [a, b, c] = example();
+
+// 返回一个对象
+
+function example() {
+  return {
+    foo: 1,
+    bar: 2
+  };
+}
+let { foo, bar } = example();
+（3）函数参数的定义
+function f([x, y, z]) { ... }
+f([1, 2, 3]);
+(4)提取 JSON 数据
+let jsonData = {
+  id: 42,
+  status: "OK",
+  data: [867, 5309]
+};
+
+let { id, status, data: number } = jsonData;
+(5)函数参数的默认值
+jQuery.ajax = function (url, {
+  async = true,
+  beforeSend = function () {},
+  cache = true,
+  complete = function () {},
+  crossDomain = false,
+  global = true,
+  // ... more config
+} = {}) {
+  // ... do stuff
+};
+（6）遍历 Map 结构
+const map = new Map();
+map.set('first', 'hello');
+map.set('second', 'world');
+for (let [key, value] of map) {
+}
+（7）输入模块的指定方法:加载模块时，往往需要指定输入哪些方法。解构赋值使得输入语句非常清晰。
+const { SourceMapConsumer, SourceNode } = require("source-map");
